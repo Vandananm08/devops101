@@ -1,6 +1,6 @@
-Jenkins Complete Setup in AMZN LINUX AMI
-----------------------------------------
+#Jenkins Complete Setup in AMZN LINUX AMI
 
+#! /bin/bash
 sudo yum update -y 
 sudo yum install java-17-amazon-corretto.x86_64 java-17-amazon-corretto-devel.x86_64 java-17-amazon-corretto-headless.x86_64 wget git tree -y  
 
