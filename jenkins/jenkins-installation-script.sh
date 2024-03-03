@@ -1,6 +1,5 @@
 Jenkins Complete Setup in AMZN LINUX AMI
 ----------------------------------------
-#! /bin/bash
 
 sudo yum update -y 
 sudo yum install java-17-amazon-corretto.x86_64 java-17-amazon-corretto-devel.x86_64 java-17-amazon-corretto-headless.x86_64 wget git tree -y  
@@ -9,9 +8,9 @@ wget https://dlcdn.apache.org/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bi
 unzip apache-maven-3.9.6-bin.zip
 sudo cp -r apache-maven-3.9.6 /opt/
 
-echo "#SETTING UP JAVA AND MAVEN"
+echo "#SET UP JAVA AND MAVEN" >> .bashrc
 echo "JAVA_HOME=/usr/lib/jvm/java-17-amazon-corretto.x86_64" >> .bashrc
-echo "M2_HOME=/opt/apache-maven-3.9.6" >> .bashrc
+echo "M2_HOME=/opt/apache-maven-3.9.6/bin" >> .bashrc
 echo "export JAVA_HOME" >> .bashrc
 echo "export M2_HOME" >> .bashrc
 echo "PATH=$PATH:$JAVA_HOME:$M2_HOME" >> .bashrc
@@ -26,7 +25,7 @@ sudo yum -y install jenkins
 sudo service jenkins start
 sudo chkconfig jenkins on
 
-echo "#SETTING UP JENKINS WORKSPACE"
+echo "#SETTING UP JENKINS WORKSPACE" >> .bashrc
 echo "JENKINS_WORKSPACE=/var/lib/jenkins/workspace" >> .bashrc
 echo "export JENKINS_WORKSPACE">> .bashrc
 echo "WEBSERVER_PATH=/var/www/html">> .bashrc
